@@ -1,11 +1,30 @@
-import LandingPage from "./components/LandingPage";
-import NavBar from "./components/nav-bar/NavBar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import LandingPage from "./components/landing-page/LandingPage";
+import Contact from "./components/contact/Contact";
+import RootLayout from "./components/RootLayout";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <div className="font-grotesk">
-      <NavBar></NavBar>
-      <LandingPage></LandingPage>
+      <RouterProvider router={router} />
     </div>
   );
 }

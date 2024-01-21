@@ -1,8 +1,3 @@
-#list li {
-  margin-bottom: 20px;
-  transition: color 0.4s 0s;
-}
-
 #list li:hover {
   color: #b68064;
 }

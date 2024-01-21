@@ -35,10 +35,10 @@ export default function Hamburger({
           width: "inherit",
           position: "absolute",
           display: "block",
-          top: 0,
+          top: sideMenuOpen ? "50%" : 0,
           borderBottom,
-          transition: `border 0.5s 0s ease, transform .7s 0s ease`,
-          transform: sideMenuOpen ? "translateY(300%) rotate(45deg)" : "none",
+          transition: `border 0.5s 0s ease, transform .7s 0s ease, top .7s 0s ease`,
+          transform: sideMenuOpen ? "rotate(45deg)" : "none",
         }}
       ></span>
       <span
@@ -49,7 +49,7 @@ export default function Hamburger({
           borderBottom,
           width: hover ? "inherit" : 25,
           transition:
-            "border 0.5s 0s ease, width 0.5s 0s ease, transform .7s 0s ease, opacity .5s 0s ease",
+            "border 0.5s 0s ease, width 0.5s 0s ease, transform .3s 0s ease, opacity .1s 0s ease",
           transform: sideMenuOpen ? "translateX(150%)" : "none",
           opacity: sideMenuOpen ? 0 : 1,
         }}
@@ -58,11 +58,12 @@ export default function Hamburger({
         style={{
           position: "absolute",
           width: "inherit",
-          top: "100%",
+          top: sideMenuOpen ? "50%" : "100%",
           display: "block",
           borderBottom,
-          transition: "border 0.5s 0s ease, transform .7s 0s ease",
-          transform: sideMenuOpen ? "translateY(-400%) rotate(-45deg)" : "none",
+          transition:
+            "border 0.5s 0s ease, transform .7s 0s ease, top .7s 0s ease",
+          transform: sideMenuOpen ? "rotate(-45deg)" : "none",
         }}
       ></span>
     </div>
